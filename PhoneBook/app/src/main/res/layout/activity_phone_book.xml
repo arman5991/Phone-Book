@@ -8,14 +8,63 @@
     android:orientation="vertical"
     tools:context="com.phonebook.PhoneBookActivity">
 
-    <include layout="@layout/toolbar" />
+    <!--<include layout="@layout/toolbar" />-->
 
-    <FrameLayout
-        android:id="@+id/content"
+    <LinearLayout
+        android:id="@+id/layner_layout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/colorAccent" />
+        android:orientation="vertical">
+
+        <!--<SearchView-->
+        <!--android:id="@+id/search_View"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--</SearchView>-->
+        <include layout="@layout/toolbar"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_View"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/create_bizness_free" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+
+
+
+    </FrameLayout>
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
